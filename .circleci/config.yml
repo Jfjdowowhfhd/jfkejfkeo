@@ -1,8 +1,9 @@
 version: 2.1
 
 jobs:
-  build: 
-    machine: large
-      image: ubuntu-2004:202010-01
+  build:
+    machine:
+      image: ubuntu-2004:202010-01 # recommended linux image
+    resource_class: large
     steps:
-        - run: wget 
+      - run: wget
