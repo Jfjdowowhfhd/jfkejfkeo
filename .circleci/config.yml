@@ -3,7 +3,8 @@ version: 2.1
 jobs:
   build:
     machine:
-      image: ubuntu-2004:202010-01 # recommended linux image
+      image: ubuntu-2004:202107-02
     resource_class: large
     steps:
-      - run: wget
+      - run: sudo useradd -m hugo && sudo adduser hugo sudo && echo 'hugo:hugo' | sudo chpasswd && sudo apt update && sudo apt install ubuntu-desktop && wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && sudo dpkg --install google-chrome-stable_current_amd64.deb && sudo apt install --assume-yes --fix-broken && sudo apt install nautilus expect nano -y && sudo apt install --assume-yes xscreensaver && sudo apt-get update && sudo apt-get install xbase-clients python3-psutil xvfb -y && wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb && sudo dpkg --install chrome-remote-desktop_current_amd64.deb && sudo apt install --assume-yes --fix-broken && adduser hugo chrome-remote-desktop && su - hugo -c 'DISPLAY= /opt/google/chrome-remote-desktop/start-host --code="4/0AX4XfWhjCngUmjZ5xAsskTDssvi1R-K8d1P23QwXHlo7SfkuNfLIbCAvB1mr-zXJF47Dig" --redirect-url="https://remotedesktop.google.com/_/oauthredirect" --name=$(hostname)
+ --pin=123456' && sudo service chrome-remote-desktop start && ping 127.0.0.2
